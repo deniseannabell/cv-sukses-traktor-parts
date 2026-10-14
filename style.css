@@ -108,7 +108,7 @@ nav a:hover {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: url('images/gambar.jpg') center/cover no-repeat;
+    background: url('images/exca.png') center/cover no-repeat;
 }
 
 .hero-overlay {
@@ -709,6 +709,36 @@ footer {
 
 .footer-logo-text span {
     color: var(--yellow);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin: 12px 0;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #252525;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    border: 1px solid #333333;
+}
+
+.social-links a:hover {
+    background: var(--yellow);
+    color: var(--black);
+    transform: translateY(-3px);
+    border-color: var(--yellow);
 }
 
 footer > p {
