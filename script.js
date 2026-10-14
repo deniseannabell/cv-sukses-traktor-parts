@@ -67,7 +67,7 @@ const productsData = [
         id: "P4",
         name: "Pins, Bushings & General Components",
         category: "GENERAL COMPONENTS",
-        image: "images/other.jpeg",
+        image: "images/pin.jpeg",
         fallbackImage: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=600&q=80",
         description: "Bucket pins, bushings, tooth adapters, and hardware built for heavy machinery durability.",
         items: [

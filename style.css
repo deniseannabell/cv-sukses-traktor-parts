@@ -99,6 +99,7 @@ nav a:hover {
 }
 
 /* HERO SECTION (MENGGUNAKAN IMAGES/EXCA.PNG) */
+/* HERO SECTION (PERBAIKAN GAMBAR 1 TAMPILAN FULL) */
 .hero {
     position: relative;
     min-height: 620px;
@@ -108,7 +109,11 @@ nav a:hover {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: url('images/exca.png') center/cover no-repeat;
+    /* Hanya memanggil exca.png dengan aturan cover & no-repeat */
+    background-image: url('images/gambar.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .hero-overlay {
@@ -682,7 +687,7 @@ nav a:hover {
     font-weight: 600;
 }
 
-/* FOOTER */
+/* FOOTER & SOSIAL MEDIA */
 footer {
     display: flex;
     flex-direction: column;
