@@ -99,6 +99,7 @@ nav a:hover {
 }
 
 /* HERO SECTION (MENGGUNAKAN IMAGES/EXCA.PNG) */
+/* HERO SECTION */
 .hero {
     position: relative;
     min-height: 620px;
@@ -108,8 +109,10 @@ nav a:hover {
     align-items: center;
     justify-content: center;
     text-align: center;
-    /* Panggil exca.png lokal, jika tidak ketemu memanggil gambar cadangan */
-    background: url('images/gambar.jpg'), url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    background-image: url('images/gambar.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .hero-overlay {
