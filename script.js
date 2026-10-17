@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
             title: "Hydraulic Parts & Components",
             desc: "Hydraulic pumps, cylinders, main valves, and custom seal kits for excavators.",
             image: "images/hydraulic.jpg",
+            fallbackImage: "images/hydraulic.png",
             waText: "Halo CV SUKSES TRAKTOR PARTS, saya ingin bertanya mengenai Hydraulic Parts."
         },
         {
@@ -12,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
             title: "Undercarriage Parts",
             desc: "Track rollers, sprockets, track chains, idlers, and shoes engineered for mining.",
             image: "images/undercarriage.jpg",
+            fallbackImage: "images/undercarriage.png",
             waText: "Halo CV SUKSES TRAKTOR PARTS, saya ingin bertanya mengenai Undercarriage Parts."
         },
         {
@@ -19,13 +21,15 @@ document.addEventListener("DOMContentLoaded", function () {
             title: "Engine Parts & Filters",
             desc: "Engine overhaul kits, liners, pistons, fuel injectors, and high efficiency filters.",
             image: "images/engine.jpg",
+            fallbackImage: "images/engine.png",
             waText: "Halo CV SUKSES TRAKTOR PARTS, saya ingin bertanya mengenai Engine Parts."
         },
         {
             category: "GENERAL COMPONENTS",
             title: "Pins, Bushings & General Components",
             desc: "Bucket pins, bushings, tooth adapters, and hardware built for heavy machinery durability.",
-            image: "images/pin.jpg", 
+            image: "images/pin.jpg",
+            fallbackImage: "images/pin.png",
             waText: "Halo CV SUKSES TRAKTOR PARTS, saya ingin bertanya mengenai General Components."
         }
     ];
@@ -47,18 +51,52 @@ document.addEventListener("DOMContentLoaded", function () {
             const card = document.createElement("div");
             card.className = "product-card";
             card.innerHTML = `
-                <img src="${item.image}" alt="${item.title}" class="product-image" onerror="this.onerror=null; this.src='images/pin.png';">
+                <img src="${item.image}" alt="${item.title}" class="product-image" onerror="this.onerror=null; this.src='${item.fallbackImage}'; this.onerror=function(){ this.src='images/gambar.jpg'; };">
                 <div class="product-info">
                     <span class="product-category">${item.category}</span>
                     <h3>${item.title}</h3>
                     <p>${item.desc}</p>
                     <div class="card-actions">
-                        <a href="https://wa.me/62895411041825?text=${encodeURIComponent(item.waText)}" target="_blank" rel="noopener" class="more-btn">MORE ↗</a>
+                        <button class="more-btn" data-category="${item.category}">MORE ↗</button>
                     </div>
                 </div>
             `;
             productList.appendChild(card);
         });
+
+        // Event listener untuk tombol MORE ↗ agar langsung filter ke kategori terkait
+        const moreButtons = productList.querySelectorAll(".more-btn");
+        moreButtons.forEach(btn => {
+            btn.addEventListener("click", function () {
+                const targetCategory = this.getAttribute("data-category");
+                filterCategory(targetCategory);
+                
+                // Scroll halus ke bagian filter
+                const productsSection = document.getElementById("products");
+                if (productsSection) {
+                    productsSection.scrollIntoView({ behavior: "smooth" });
+                }
+            });
+        });
+    }
+
+    function filterCategory(categoryName) {
+        // Update active class di tombol filter atas
+        categoryButtons.forEach(b => {
+            if (b.getAttribute("data-category") === categoryName) {
+                b.classList.add("active");
+            } else {
+                b.classList.remove("active");
+            }
+        });
+
+        // Filter daftar produk
+        if (categoryName === "ALL") {
+            renderProducts(products);
+        } else {
+            const filtered = products.filter(p => p.category === categoryName);
+            renderProducts(filtered);
+        }
     }
 
     renderProducts(products);
@@ -77,16 +115,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     categoryButtons.forEach(btn => {
         btn.addEventListener("click", function () {
-            categoryButtons.forEach(b => b.classList.remove("active"));
-            this.classList.add("active");
-
             const category = this.getAttribute("data-category");
-            if (category === "ALL") {
-                renderProducts(products);
-            } else {
-                const filtered = products.filter(p => p.category === category);
-                renderProducts(filtered);
-            }
+            filterCategory(category);
         });
     });
 });
