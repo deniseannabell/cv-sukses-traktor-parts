@@ -1,11 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Data Kategori Produk
     const products = [
         {
             category: "HYDRAULIC SYSTEM",
             title: "Hydraulic Parts & Components",
             desc: "Hydraulic pumps, cylinders, main valves, and custom seal kits for excavators.",
-            image: "images/hydraulic.jpg", // Gantilah sesuai ekstensi file gambarmu (.jpg / .png)
+            image: "images/hydraulic.jpg",
             waText: "Halo CV SUKSES TRAKTOR PARTS, saya ingin bertanya mengenai Hydraulic Parts."
         },
         {
@@ -26,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
             category: "GENERAL COMPONENTS",
             title: "Pins, Bushings & General Components",
             desc: "Bucket pins, bushings, tooth adapters, and hardware built for heavy machinery durability.",
-            image: "images/pin.jpg",
+            image: "images/general.jpg",
             waText: "Halo CV SUKSES TRAKTOR PARTS, saya ingin bertanya mengenai General Components."
         }
     ];
@@ -35,7 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const searchInput = document.getElementById("searchInput");
     const categoryButtons = document.querySelectorAll(".cat-btn");
 
-    // Fungsi Render Produk
     function renderProducts(items) {
         if (!productList) return;
         productList.innerHTML = "";
@@ -63,10 +61,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Render Awal
     renderProducts(products);
 
-    // Fitur Pencarian (Search)
     if (searchInput) {
         searchInput.addEventListener("input", function (e) {
             const query = e.target.value.toLowerCase();
@@ -79,7 +75,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Fitur Filter Kategori
     categoryButtons.forEach(btn => {
         btn.addEventListener("click", function () {
             categoryButtons.forEach(b => b.classList.remove("active"));
