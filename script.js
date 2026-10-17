@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
             category: "GENERAL COMPONENTS",
             title: "Pins, Bushings & General Components",
             desc: "Bucket pins, bushings, tooth adapters, and hardware built for heavy machinery durability.",
-            image: "images/pin.jpg",
+            image: "images/pin.jpg", // Mengacu pada file pin.jpg di folder images/
             waText: "Halo CV SUKSES TRAKTOR PARTS, saya ingin bertanya mengenai General Components."
         }
     ];
@@ -47,13 +47,13 @@ document.addEventListener("DOMContentLoaded", function () {
             const card = document.createElement("div");
             card.className = "product-card";
             card.innerHTML = `
-                <img src="${item.image}" alt="${item.title}" class="product-image" onerror="this.onerror=null; this.src='images/gambar.jpg';">
+                <img src="${item.image}" alt="${item.title}" class="product-image" onerror="this.onerror=null; this.src='images/pin.png';">
                 <div class="product-info">
                     <span class="product-category">${item.category}</span>
                     <h3>${item.title}</h3>
                     <p>${item.desc}</p>
                     <div class="card-actions">
-                        <a href="https://wa.me/62895411041825?text=${encodeURIComponent(item.waText)}" target="_blank" rel="noopener" class="more-btn">INQUIRE NOW ↗</a>
+                        <a href="https://wa.me/62895411041825?text=${encodeURIComponent(item.waText)}" target="_blank" rel="noopener" class="more-btn">MORE ↗</a>
                     </div>
                 </div>
             `;
