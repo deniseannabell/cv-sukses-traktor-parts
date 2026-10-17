@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
             category: "GENERAL COMPONENTS",
             title: "Pins, Bushings & General Components",
             desc: "Bucket pins, bushings, tooth adapters, and hardware built for heavy machinery durability.",
-            image: "images/pin.jpg", // Mengacu pada file pin.jpg di folder images/
+            image: "images/pin.jpg", 
             waText: "Halo CV SUKSES TRAKTOR PARTS, saya ingin bertanya mengenai General Components."
         }
     ];
