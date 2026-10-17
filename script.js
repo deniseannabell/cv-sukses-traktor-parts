@@ -5,28 +5,28 @@ document.addEventListener("DOMContentLoaded", function () {
             category: "HYDRAULIC SYSTEM",
             title: "Hydraulic Parts & Components",
             desc: "Hydraulic pumps, cylinders, main valves, and custom seal kits for excavators.",
-            image: "images/hydraulic.jpeg", // Gantilah sesuai ekstensi file gambarmu (.jpg / .png)
+            image: "images/hydraulic.jpg", // Gantilah sesuai ekstensi file gambarmu (.jpg / .png)
             waText: "Halo CV SUKSES TRAKTOR PARTS, saya ingin bertanya mengenai Hydraulic Parts."
         },
         {
             category: "UNDERCARRIAGE SYSTEM",
             title: "Undercarriage Parts",
             desc: "Track rollers, sprockets, track chains, idlers, and shoes engineered for mining.",
-            image: "images/undercarriage.jpeg",
+            image: "images/undercarriage.jpg",
             waText: "Halo CV SUKSES TRAKTOR PARTS, saya ingin bertanya mengenai Undercarriage Parts."
         },
         {
             category: "ENGINE SYSTEM",
             title: "Engine Parts & Filters",
             desc: "Engine overhaul kits, liners, pistons, fuel injectors, and high efficiency filters.",
-            image: "images/engine.jpeg",
+            image: "images/engine.jpg",
             waText: "Halo CV SUKSES TRAKTOR PARTS, saya ingin bertanya mengenai Engine Parts."
         },
         {
             category: "GENERAL COMPONENTS",
             title: "Pins, Bushings & General Components",
             desc: "Bucket pins, bushings, tooth adapters, and hardware built for heavy machinery durability.",
-            image: "images/pin.jpeg",
+            image: "images/pin.jpg",
             waText: "Halo CV SUKSES TRAKTOR PARTS, saya ingin bertanya mengenai General Components."
         }
     ];
